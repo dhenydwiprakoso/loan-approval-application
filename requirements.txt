@@ -2,7 +2,7 @@ numpy==1.18.5
 Flask==1.1.2
 joblib==0.16.0
 imbalanced-learn==0.7.0
-imblearn=0.0
+imblearn==0.0
 json5==0.9.5
 jsonschema==3.2.0
 pandas==1.1.1
