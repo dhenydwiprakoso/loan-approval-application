@@ -38,13 +38,16 @@ def get_approval(gender, married, dependents, education, self_employed, applican
 def load_saved_artifacts():
     print("loading saved artifacts...start")
     
+    path = os.path.dirname(__file__) 
+    artifacts = os.path.join(path, "artifacts"),
+
     global __data_columns
-    with open("./artifacts/columns.json", 'r') as f:
+    with open(artifacts[0]+"/columns.json", "r") as f:
         __data_columns= json.load(f)['data_columns']
     
     global __model
     if __model is None:
-        with open("./artifacts/loan_no loan_rf_model.pkl", 'rb') as f:
+        with open(artifacts[0]+"/loan_no loan_rf_model.pkl", 'rb') as f:
             __model = joblib.load(f)
 
     print ('loading model artifacts...done')
