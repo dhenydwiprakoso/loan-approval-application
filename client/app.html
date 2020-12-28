@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+        <title>Loan Approval Application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- For running locally -->
+        <!-- <script src="app.js"></script>
+        <link rel="stylesheet" href="app.css"> -->
+
+        <!-- For integrating Flask and HTML -->
+        <script src="{{ url_for('static',filename='app.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='app.css') }}">
+    </head>
+    <body>
+        <h1>Loan Approval Application</h1>
+        <div class="img"></div>
+        <form class="form">
+            <h2>Gender</h2>
+            <div>
+                <select class="drop_down" name="" id="uiGender">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <h2>Married?</h2>
+            <div>
+                <select class="drop_down" name="" id="uiMarried">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <h2>Dependents</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-dep-1" name="uiDependents" value="0"/>
+                <label for="radio-dep-1">0</label>
+                <input type="radio" id="radio-dep-2" name="uiDependents" value="1" checked/>
+                <label for="radio-dep-2">1</label>
+                <input type="radio" id="radio-dep-3" name="uiDependents" value="2"/>
+                <label for="radio-dep-3">2</label>
+                <input type="radio" id="radio-dep-4" name="uiDependents" value="3+"/>
+                <label for="radio-dep-4">3+</label>
+            </div>
+
+            <h2>Education</h2>
+            <div>
+                <select class="drop_down" name="" id="uiEducation">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Not Graduate">Not Graduate</option>
+                </select>
+            </div>
+
+            <h2>Self Employed?</h2>
+            <div>
+                <select class="drop_down" name="" id="uiSelfEmployed">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <h2>Applicant Income</h2>
+            <input class="area"  type="number" id="uiAIncome" class="floatLabel" name="" value="5000">
+
+            <h2>Co-applicant Income</h2>
+            <input class="area"  type="number" id="uiCIncome" class="floatLabel" name="" value="0">
+
+            <h2>Loan Amount</h2>
+            <input class="area"  type="number" id="uiLAmount" class="floatLabel" name="" value="100">
+            
+            <h2>Loan Amount Term</h2>
+            <input class="area"  type="number" id="uiLAmountT" class="floatLabel" name="" value="100">
+            
+            <h2>Credit History</h2>
+            <div>
+                <select class="drop_down" name="" id="uiCreditHistory">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Has All Debts Paid">Has All Debts Paid</option>
+                    <option value="Not Paid">Not Paid</option>
+                </select>
+            </div>
+
+            <h2>Property Area</h2>
+            <div>
+                <select class="drop_down" name="" id="uiPropertyArea">
+                    <option value="" disabled="disabled" selected="selected">Choose Answer</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Semiurban">Semiurban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+
+            <button class="submit" onclick="onClickedApplyLoan()" type="button">Apply Loan</button>
+            <div id="" class="text"><strong>*Fill all field if you want the result appear</strong></div>
+            <div id="uiApplyLoan" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+</html>
