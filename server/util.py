@@ -19,6 +19,53 @@ def dependents_func (data):
         return 3
     return float(data)
 
+def applicant_income_func(data):
+    if data < 81000//5:
+        return 0
+    elif data >= 81000//5 and data < 2*81000//5:
+        return 1
+    elif data >= 2*81000//5 and data < 3*81000//5:
+        return 2
+    elif data >= 3*81000//5 and data < 4*81000//5:
+        return 3
+    elif data >= 4*81000//5:
+        return 4
+def coapplicant_income_func(data):
+    if data < 2000:
+        return 0
+    elif data >= 2000 and data < 4000:
+        return 1
+    elif data >= 4000 and data < 6000:
+        return 2
+    elif data >= 6000 and data < 8000:
+        return 3
+    elif data >= 8000:
+        return 4
+
+def loan_amount_func(data):
+    if data < 700//5:
+        return 0
+    elif data >= 700//5 and data < 2*700//5:
+        return 1
+    elif data >= 2*700//5 and data < 3*700//5:
+        return 2
+    elif data >= 3*700//5 and data < 4*700//5:
+        return 3
+    elif data >= 4*700//5:
+        return 4
+
+def loan_amount_term_func(data):
+    if data < 480//5:
+        return 0
+    elif data >= 480//5 and data < 2*480//5:
+        return 1
+    elif data >= 2*480//5 and data < 3*480//5:
+        return 2
+    elif data >= 3*480//5 and data < 4*480//5:
+        return 3
+    elif data >= 4*480//5:
+        return 4
+
 def get_approval(gender, married, dependents, education, self_employed, applicantincome, coapplicantincome,loanamount, loan_amount_term, credit_history, property_area):
     x = np.zeros(len(__data_columns))
     x[0] = gender_dict[gender]
@@ -26,10 +73,10 @@ def get_approval(gender, married, dependents, education, self_employed, applican
     x[2] = dependents_func(dependents)
     x[3] = education_dict[education]
     x[4] = yes_no_dict[self_employed]
-    x[5] = applicantincome
-    x[6] = coapplicantincome
-    x[7] = loanamount
-    x[8] = loan_amount_term
+    x[5] = applicant_income_func(applicantincome)
+    x[6] = coapplicant_income_func(coapplicantincome)
+    x[7] = loan_amount_func(loanamount)
+    x[8] = loan_amount_term_func(loan_amount_term)
     x[9] = credits_dict[credit_history]
     x[10] = area_dict[property_area]
 
